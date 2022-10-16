@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: installing httpd
+      command: yum install httpd -y
+
+    - name: restarting httpd
+      service: name=httpd state=restarted
